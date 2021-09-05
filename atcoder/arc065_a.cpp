@@ -25,11 +25,21 @@ void answer_1(string S) {
     }
 }
 
+void answer_2(string S) {
+    S = regex_replace(S, regex("dreamer"), "");
+    S = regex_replace(S, regex("eraser"), "");
+    S = regex_replace(S, regex("dream"), "");
+    S = regex_replace(S, regex("erase"), "");
+
+    cout << (S == "" ? "YES" : "NO") << endl;
+}
+
 int main() {
     string S;
     cin >> S;
 
-	answer_1(S);
+    //answer_1(S);
+	answer_2(S);
 
     return 0;
 }
