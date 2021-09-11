@@ -11,38 +11,34 @@ int main() {
     int B;
     cin >> B;
 
-    pair<string, int> sd[N];
-    for(int i = 0; i < N; i++) {
-        string s;
-        int x;
-        cin >> s >> x;
-        sd[i] = make_pair(s, x);
-    }
-
     int total = 0;
     for(int i = 0; i < N; i++) {
-        if(sd[i].first == "East") {
-            if(sd[i].second < A) {
+		string s;
+		int x;
+		cin >> s >> x;
+
+        if(s == "East") {
+            if(x < A) {
                 total += A;
-            } else if(sd[i].second > B) {
+            } else if(x > B) {
                 total += B;
             } else {
-                total += sd[i].second;
+                total += x;
             }
         } else {
-            if(sd[i].second < A) {
+            if(x < A) {
                 total -= A;
-            } else if(sd[i].second > B) {
+            } else if(x > B) {
                 total -= B;
             } else {
-                total -= sd[i].second;
+                total -= x;
             }
         }
     }
 
     if(total == 0) {
 		cout << total << endl;
-    } else if(total < 0) {
+    } else if(total > 0) {
         cout << "East " << abs(total) << endl;
     } else {
         cout << "West " << abs(total) << endl;
