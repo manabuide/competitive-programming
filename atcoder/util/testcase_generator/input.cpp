@@ -48,9 +48,41 @@ void generate_boundary_integer_array(long long n, long long min,
     }
 }
 
-void generate_random_integer_array(long long n, long long min, long long max) {
+void generate_random_integer_array(long long n, long long min, long long max,
+                                   bool duplication) {
+    vector<long long> array;
+
+    if(!duplication && n > max - min) {
+        cout << "-1" << endl;
+
+        return;
+    }
+
     for(int i = 0; i < n; i++) {
-        cout << set_random_integer_value(min, max);
+        if(duplication) {
+            array.push_back(set_random_integer_value(min, max));
+        } else {
+            while(true) {
+                long long x = set_random_integer_value(min, max);
+                bool is_duplicated = false;
+
+                for(int j = 0; j < array.size(); j++) {
+                    if(x == array[j]) {
+                        is_duplicated = true;
+                        break;
+                    }
+                }
+
+                if(!is_duplicated) {
+                    array.push_back(x);
+                    break;
+                }
+            }
+        }
+    }
+
+    for(int i = 0; i < array.size(); i++) {
+        cout << array[i];
 
         if(i == n - 1) {
             cout << endl;
