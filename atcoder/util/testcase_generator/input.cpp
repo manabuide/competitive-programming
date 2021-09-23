@@ -96,6 +96,7 @@ void generate_random_digit_string(int n) {
     for (int i = 0; i < n; i++) {
         cout << char(set_random_integer_value(0, 9) + '0');
     }
+    cout << endl;
 }
 
 void generate_random_lower_string(int n) {
