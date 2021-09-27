@@ -22,6 +22,14 @@ int main() {
 
         solve();
 
+        cout << "\n----------\n" << endl;
+
+        string str;
+        ifstream ifstr2(input_file_name);
+        while(getline(ifstr2, str)) {
+            cout << str << endl;
+        }
+
         cout.rdbuf(strbuf);
     }
 
