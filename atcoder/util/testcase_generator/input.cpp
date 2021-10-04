@@ -125,6 +125,16 @@ void generate_random_string(int n) {
     cout << endl;
 }
 
+void generate_random_specific_string(int n, string s) {
+    string result_string;
+
+    for(int i = 0; i < n; i++) {
+        result_string += s[set_random_integer_value(0, s.size() - 1)];
+    }
+
+    cout << result_string << endl;
+}
+
 int main() {
     int n;
     cin >> n;
