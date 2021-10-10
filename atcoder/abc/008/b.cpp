@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+void solve1() {
     int N;
     cin >> N;
 
@@ -18,6 +18,6 @@ int main() {
     }
 
     cout << answer << endl;
-
-    return 0;
 }
+
+int main() { return 0; }
