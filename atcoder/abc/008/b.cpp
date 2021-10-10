@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+using namespace std::literals;
 
 void solve1() {
     int N;
