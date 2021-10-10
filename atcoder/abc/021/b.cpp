@@ -31,4 +31,31 @@ void solve1() {
     }
 }
 
+void solve2() {
+    int n, a, b, k;
+    cin >> n >> a >> b >> k;
+
+    multiset<int> p;
+
+    for (int i = 0; i < k; ++i) {
+        int temp;
+        cin >> temp;
+        p.insert(temp);
+    }
+
+    p.insert(a);
+    p.insert(b);
+
+    string answer = "YES"s;
+
+    for (int i = 0; i < n; ++i) {
+        if (p.count(i + 1) >= 2) {
+            answer = "NO"s;
+            break;
+        }
+    }
+
+    cout << answer << "\n"s;
+}
+
 int main() { return 0; }
