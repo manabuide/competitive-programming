@@ -20,4 +20,28 @@ void solve1() {
 
     cout << count << endl;
 }
+
+void solve2() {
+    int n;
+    cin >> n;
+
+    multiset<int> a;
+
+    for (int i = 0; i < n; ++i) {
+        int temp;
+        cin >> temp;
+        a.insert(temp);
+    }
+
+    int count = 0;
+
+    for (int i = 1; i <= 100000; ++i) {
+        if (a.count(i)) {
+            count += a.count(i) - 1;
+        }
+    }
+
+    cout << count << "\n"s;
+}
+
 int main() { return 0; }
