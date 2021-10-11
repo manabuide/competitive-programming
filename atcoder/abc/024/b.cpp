@@ -27,4 +27,28 @@ void solve1() {
     cout << total << endl;
 }
 
+void solve2() {
+    int n, t;
+    cin >> n >> t;
+
+    vector<int> a;
+    for (int i = 0; i < n; ++i) {
+        int temp;
+        cin >> temp;
+        a.push_back(temp);
+    }
+
+    int total = t;
+
+    for (int i = 1; i < n; ++i) {
+        if (a.at(i - 1) + t > a.at(i)) {
+            total += a.at(i) - a.at(i - 1);
+        } else {
+            total += t;
+        }
+    }
+
+    cout << total << "\n"s
+}
+
 int main() { return 0; }
