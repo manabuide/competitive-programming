@@ -1,22 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-	int N;
-	cin >> N;
+void solve1() {
+    int N;
+    cin >> N;
 
-	int count = 0;
-	for (int i = 0; i < N; i++) {
-		int x;
-		cin >> x;
-		
-		while (x % 2 == 0 || x % 3 == 2) {
-			x--;
-			count++;
-		}
-	}
+    int count = 0;
+    for (int i = 0; i < N; i++) {
+        int x;
+        cin >> x;
 
-  	cout << count << endl;
-    
-	return 0;
+        while (x % 2 == 0 || x % 3 == 2) {
+            x--;
+            count++;
+        }
+    }
+
+    cout << count << endl;
 }
+
+int main() { return 0; }
