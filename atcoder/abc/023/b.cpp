@@ -46,4 +46,52 @@ void solve1() {
     }
 }
 
+void solve2() {
+    int n;
+    cin >> n;
+
+    string s;
+    cin >> s;
+
+    int answer = -1;
+
+    if (n == 1 && s.at(0) == 'b') {
+        cout << 0 << "\n"s;
+        return;
+    }
+
+    if (n % 2 == 0) {
+        cout << answer << "\n"s;
+        return;
+    }
+
+    for (int i = 0; i < n; ++i) {
+        if (s.at(i) != 'a' && s.at(i) != 'b' && s.at(i) != 'c') {
+            cout << answer << "\n"s;
+            return;
+        }
+    }
+
+    string result = "b"s;
+
+    for (int x = 1; x <= 100; ++x) {
+        if (x % 3 == 1) {
+            result.insert(0, "a"s);
+            result.insert(result.end(), 'c');
+        } else if (x % 3 == 2) {
+            result.insert(0, "c"s);
+            result.insert(result.end(), 'a');
+        } else if (x % 3 == 0) {
+            result.insert(0, "b"s);
+            result.insert(result.end(), 'b');
+        }
+        if (s == result) {
+            answer = x;
+            break;
+        }
+    }
+
+    cout << answer << "\n"s;
+}
+
 int main() { return 0; }
