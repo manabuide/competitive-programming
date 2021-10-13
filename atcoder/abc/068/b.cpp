@@ -30,4 +30,25 @@ void solve1() {
     cout << answer << endl;
 }
 
+void solve2() {
+    int n;
+    cin >> n;
+
+    int max_count = -1, max_number = -1;
+    for (int lx = 1; lx <= n; ++lx) {
+        int x = lx;
+        int count = 0;
+        while (x % 2 == 0) {
+            x /= 2;
+            ++count;
+        }
+        if (count > max_count) {
+            max_count = count;
+            max_number = lx;
+        }
+    }
+
+    cout << max_number << "\n"s;
+}
+
 int main() { return 0; }
