@@ -32,4 +32,27 @@ void solve1() {
     }
 }
 
+void solve2() {
+    string s;
+    cin >> s;
+
+    int count[26] = {};
+
+    for (int i = 0; i < s.size(); ++i) {
+        ++count[s.at(i) - 'a'];
+    }
+
+    string alphabet_table = "abcdefghijklmnopqrstuvwxyz"s;
+    string answer = "None"s;
+
+    for (int i = 0; i < 26; ++i) {
+        if (!count[i]) {
+            answer = alphabet_table[i];
+            break;
+        }
+    }
+
+    cout << answer << "\n"s;
+}
+
 int main() { return 0; }
