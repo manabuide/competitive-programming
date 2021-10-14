@@ -20,4 +20,20 @@ void solve() {
     }
 }
 
+void solve2() {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    string answer = "NO"s;
+
+    for (int x = 1; x <= b; ++x) {
+        if (x * a % b == c) {
+            answer = "YES"s;
+            break;
+        }
+    }
+
+    cout << answer << "\n"s;
+}
+
 int main() { return 0; }
