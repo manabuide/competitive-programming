@@ -19,4 +19,15 @@ void solve1() {
     cout << answer << endl;
 }
 
+void solve2() {
+    int x, y, z;
+    cin >> x >> y >> z;
+
+    x -= z;
+
+    int answer = x / (y + z);
+
+    cout << answer << "\n"s;
+}
+
 int main() { return 0; }
